@@ -1,5 +1,5 @@
 ﻿<!DOCTYPE html>
-<html lang="uk">
+<html lang="uk" xmlns:>
 
   <head>
     <meta charset="UTF-8"/>
@@ -8,18 +8,73 @@
           value="Система обліку студентів навчального закладу" />
 
     <!-- Include Styles -->
-    <link rel=”stylesheet”
+    <link rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
   </head>
 
   <body>
-    <h1>Вітаю вас на нашій сторінці!</h1>
-    <p>Поки тут порожньо, але незабаром ми матимемо список студентів.</p>
+    <!-- Start Container -->
+    <div class="container">
+
+      <!-- Start Header -->
+      <div class="row" id="header">
+
+        <!-- Logo -->
+        <div class="col-xs-8">
+          <h1>Сервіс обліку студентів</h1>
+        </div>
+
+        <!-- Groups Selector -->
+        <div class="col-xs-4" id="group-selector">
+          <strong>Група:</strong>
+          <label>
+            <select>
+              <option value="">Усі студенти</option>
+              <option value="">АУ-35, Салітринський Володимир (№ 36)</option>
+              <option value="">АУ-36, Салітринська Лілія (№ 18)</option>
+            </select>
+          </label>
+        </div>
+
+      </div>
+      <!-- End Header -->
+
+      <!-- Start SubHeader -->
+      <div class="row" id="sub-header">
+        <div class="col-xs-12">
+          <ul class="nav nav-tabs" role="tablist">
+            <li role="presentation" class="active"><a href="#">Студенти</a></li>
+            <li role="presentation"><a href="#">Відвідування</a></li>
+            <li role="presentation"><a href="#">Групи</a></li>
+          </ul>
+        </div>
+      </div>
+      <!-- End SubHeader>
+
+      <!-- Start Main Page Content -->
+      <div class="row" id="content-columns">
+
+        <div class="col-xs-12" id="content-column">
+          Контент, Список студентів
+        </div>
+
+      </div>
+      <!-- End Main Page Content -->
+
+      <!-- Start Footer -->
+      <div class="row" id="footer">
+        <div class="col-xs-12">
+          &copy; 2016 Сервіс обліку студентів
+        </div>
+      </div>
+      <!-- End Footer -->
+
+    </div>
+    <!-- End Container -->
+
 
     <!-- Javascripts Section -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
   </body>
-
 </html>
