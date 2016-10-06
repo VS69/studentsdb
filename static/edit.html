@@ -1,0 +1,140 @@
+﻿<!DOCTYPE html>
+<html lang="uk">
+
+  <head>
+    <meta charset="UTF-8"/>
+    <title>Сервіс обліку студентів</title>
+    <meta name="description"
+          value="Система обліку студентів навчального закладу" />
+
+    <!-- Include Styles -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/main.css">
+  </head>
+
+  <body>
+    <!-- Start Container -->
+    <div class="container">
+
+      <!-- Start Header -->
+      <div class="row" id="header">
+
+        <!-- Logo -->
+        <div class="col-sm-12">
+          <h1>Форма редагування студента</h1>
+        </div>
+
+      </div>
+      <!-- End Header -->
+
+      <!-- Start Main Page Content -->
+      <div class="row" id="content-columns">
+
+        <div class="col-sm-12" id="content-column">
+
+          <form class="form-horizontal" role="form" method="post"
+                action="students.html">
+            <div class="form-group">
+              <label for="name1"
+                     class="col-sm-2 control-label">Ім'я&#42;</label>
+              <div class="col-sm-3">
+                <input type="text" class="form-control" id="name1"
+                       name="name1" value="">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="name2"
+                     class="col-sm-2 control-label">По-батькові</label>
+              <div class="col-sm-3">
+                <input type="text" class="form-control" id="name2"
+                       name="name2" value="">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="name3"
+                     class="col-sm-2 control-label">Прізвище&#42;</label>
+              <div class="col-sm-3">
+                <input type="text" class="form-control" id="name3"
+                       name="name3" value="">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="bilet"
+                     class="col-sm-2 control-label">№ білету&#42;</label>
+              <div class="col-sm-3">
+                <input type="text" class="form-control" id="bilet"
+                       name="bilet" value="">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="date"
+                     class="col-sm-2 control-label">Дата народження</label>
+              <div class="col-sm-3">
+                <input type="date" class="form-control" id="date"
+                       name="date" value="">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="foto"
+                     class="col-sm-2 control-label">Фото</label>
+              <div class="col-sm-3">
+                <input type="file" accept="image/*" name="foto">
+              </div>
+            </div>
+            <div class="form-group" id="group-selector2">
+              <label for="group"
+                     class="col-sm-2 control-label">Група&#42;</label>
+              <div class="col-sm-3">
+                <label>
+                  <select>
+                    <option selected disabled>Виберіть групу</option>
+                    <option value="">АТ-32</option>
+                    <option value="">АУ-34</option>
+                    <option value="">АУ-35</option>
+                  </select>
+                </label>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="message"
+                     class="col-sm-2 control-label">Додаткові нотатки</label>
+              <div class="col-sm-3">
+                <textarea class="form-control" rows="4" id="message"
+                          name="message"></textarea>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="col-sm-1 col-sm-offset-2">
+                <input id="submit" name="submit" type="submit"
+                       value="Зберегти" class="btn btn-primary">
+              </div>
+              <div class="col-sm-1">
+                <input id="reset" name="reset" type="reset"
+                       value="Скасувати" class="btn btn-link">
+              </div>
+            </div>
+          </form>
+
+        </div>
+
+      </div>
+      <!-- End Main Page Content -->
+
+      <!-- Start Footer -->
+      <div class="row" id="footer">
+        <div class="col-xs-12">
+          &copy; 2016 Сервіс обліку студентів
+        </div>
+      </div>
+      <!-- End Footer -->
+
+    </div>
+    <!-- End Container -->
+
+
+    <!-- Javascripts Section -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  </body>
+</html>
