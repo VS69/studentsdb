@@ -1,4 +1,3 @@
-# coding=utf-8
 # -*- coding: utf-8 -*-
 
 from django.shortcuts import render
@@ -20,7 +19,7 @@ def students_list(request):
         {'id': 3,
          'first_name': u'Петро',
          'last_name': u'Петров',
-         'ticket': 235,
+         'ticket': 1536,
          'image': 'img/st03.jpg'},
     )
     return render(request, 'students/students_list.html',
