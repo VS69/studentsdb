@@ -5,8 +5,9 @@
 
   <head>
     <meta charset="UTF-8"/>
-    <title>Сервіс обліку студентів - {% block meta_title %}
-           {% endblock meta_title %}</title>
+    <title>
+      Сервіс обліку студентів - {% block meta_title %}{% endblock meta_title %}
+    </title>
     <meta name="description"
           value="Система обліку студентів навчального закладу" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -51,7 +52,18 @@
       <div class="row" id="sub-header">
         <div class="col-xs-12">
           <ul class="nav nav-tabs" role="tablist">
-            {% block subheader %}{% endblock subheader %}
+            {% url "home" as url_students %}
+            {% url "groups" as url_groups %}
+
+            <li role="presentation"
+                {% if url_students == request.path %}class="active"{% endif %}>
+              <a href="{% url "home" %}">Студенти</a></li>
+            <li role="presentation"
+                {% if '/journal' in request.path %}class="active"{% endif %}>
+              <a href="/journal">Відвідування</a></li>
+            <li role="presentation"
+                {% if url_groups in request.path %}class="active"{% endif %}>
+              <a href="{% url "groups" %}">Групи</a></li>
           </ul>
         </div>
       </div>
