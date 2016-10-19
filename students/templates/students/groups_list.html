@@ -1,0 +1,76 @@
+﻿{% extends "students/base.html" %}
+
+{% load static from staticfiles %}
+
+{% block meta_title %}Групи{% endblock meta_title %}
+
+{% block subheader %}
+<li role="presentation"><a href="{% url "home" %}">Студенти</a></li>
+<li role="presentation"><a href="/journal">Відвідування</a></li>
+<li role="presentation" class="active">
+  <a href="{% url "groups" %}">Групи</a></li>
+{% endblock subheader %}
+
+{% block title %}Групи{% endblock title %}
+
+{% block content %}
+<!-- Add Group Button -->
+<a class="btn btn-primary"
+   href="{% url "groups_add" %}">Додати групу</a>
+
+<div>
+  <!-- Start Groups Listing -->
+  <table class="table table-hover table-striped">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th><a href="">Назва &uarr;</a></th>
+        <th><a href="#">Староста</a></th>
+        <th>Дія</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for group in groups %}
+      <tr>
+        <td>{{ forloop.counter }}</td>
+        <td><a title="Редагувати"
+               href="{% url "groups_edit" group.id %}">
+              {{ group.name }}</a></td>
+        <td><a title="Редагувати"
+               href="{% url "groups_edit" group.id %}">
+              {{ group.captain }}</a></td>
+        <td>
+          <div class="dropdown">
+            <button class="btn btn-default dropdown-toggle"
+                    type="button" data-toggle="dropdown">Дія
+              <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu" role="menu">
+              <li role="presentation">
+                <a role="menuitem" tabindex="-1"
+                   href="{% url "groups_edit" group.id %}">
+                  Редагувати</a>
+              </li>
+              <li role="presentation">
+                <a role="menuitem" tabindex="-1"
+                   href="{% url "groups_delete" group.id %}">
+                  Видалити</a>
+              </li>
+            </ul>
+          </div>
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  <!-- End Groups Listing -->
+
+  <nav>
+    <ul class="pagination">
+      <li class="active"><a href="#">1</a></li>
+      <li><a href="#">2</a></li>
+      <li><a href="#">Далі</a></li>
+    </ul>
+  </nav>
+</div>
+{% endblock content %}
