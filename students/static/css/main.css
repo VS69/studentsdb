@@ -42,14 +42,6 @@ h1, h2, h3, h4, h5, h6 {
   color: #555555;
 }
 
-th {
-  text-align: center;
-}
-
-td {
-  text-align: center;
-}
-
 td.day-box {
   vertical-align: middle !important;
 }
