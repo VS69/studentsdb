@@ -46,6 +46,10 @@ th {
   text-align: center;
 }
 
+td {
+  text-align: center;
+}
+
 td.day-box {
   vertical-align: middle !important;
 }
