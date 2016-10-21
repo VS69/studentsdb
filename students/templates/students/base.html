@@ -57,14 +57,15 @@
         <div class="col-xs-12">
           <ul class="nav nav-tabs" role="tablist">
             {% url "home" as url_students %}
+            {% url "journal_edit" as url_journal %}
             {% url "groups" as url_groups %}
 
             <li role="presentation"
                 {% if url_students == request.path %}class="active"{% endif %}>
               <a href="{% url "home" %}">Студенти</a></li>
             <li role="presentation"
-                {% if '/journal' in request.path %}class="active"{% endif %}>
-              <a href="/journal">Відвідування</a></li>
+                {% if url_journal in request.path %}class="active"{% endif %}>
+              <a href="{% url "journal_edit" %}">Відвідування</a></li>
             <li role="presentation"
                 {% if url_groups in request.path %}class="active"{% endif %}>
               <a href="{% url "groups" %}">Групи</a></li>
@@ -73,7 +74,7 @@
       </div>
       <!-- End SubHeader>
 
-      <!-- Start Main Page Content -->
+      <!-- Start Page Content -->
       <div class="row" id="content-columns">
 
         <div class="col-xs-12" id="content-column">
@@ -91,7 +92,7 @@
         </div>
 
       </div>
-      <!-- End Main Page Content -->
+      <!-- End Page Content -->
 
       {% block footer %}
       <!-- Start Footer -->

@@ -21,5 +21,9 @@ urlpatterns = patterns(
     url(r'^groups/(?P<gid>\d+)/delete/$',
         'students.views.groups.groups_delete', name='groups_delete'),
 
+    # Journal urls
+    url(r'^journal/$',
+        'students.views.journal.journal_edit', name='journal_edit'),
+
     url(r'^admin/', include(admin.site.urls)),
 )

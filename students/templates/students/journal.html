@@ -1,0 +1,109 @@
+﻿{% extends "students/base.html" %}
+
+{% load static from staticfiles %}
+
+{% block meta_title %}Журнал відвідувань{% endblock meta_title %}
+
+{% block title %}Облік відвідування{% endblock title %}
+
+{% block content %}
+<!-- Start Journal Content -->
+<h6 align="center">
+  <a href="#">&larr; </a>
+  Жовтень 2016
+  <a href="#"> &rarr;</a>
+</h6>
+
+<div>
+  <!-- Start Visits Table -->
+  <table class="table table-bordered table-striped">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Студент</th>
+        <th>Сб<br>1</th>
+        <th>Нд<br>2</th>
+        <th>Пн<br>3</th>
+        <th>Вт<br>4</th>
+        <th>Ср<br>5</th>
+        <th>Чт<br>6</th>
+        <th>Пт<br>7</th>
+        <th>Сб<br>8</th>
+        <th>Нд<br>9</th>
+        <th>Пн<br>10</th>
+        <th>Вт<br>11</th>
+        <th>Ср<br>12</th>
+        <th>Чт<br>13</th>
+        <th>Пт<br>14</th>
+        <th>Сб<br>15</th>
+        <th>Нд<br>16</th>
+        <th>Пн<br>17</th>
+        <th>Вт<br>18</th>
+        <th>Ср<br>19</th>
+        <th>Чт<br>20</th>
+        <th>Пт<br>21</th>
+        <th>Сб<br>22</th>
+        <th>Нд<br>23</th>
+        <th>Пн<br>24</th>
+        <th>Вт<br>25</th>
+        <th>Ср<br>26</th>
+        <th>Чт<br>27</th>
+        <th>Пт<br>28</th>
+        <th>Сб<br>29</th>
+        <th>Нд<br>30</th>
+        <th>Пн<br>31</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for student in students %}
+      <tr>
+        <td>{{ forloop.counter }}</td>
+        <td><a title="Редагувати" href="{% url "students_edit" student.id %}">
+              {{ student.last_name }}&nbsp;{{ student.first_name }}</a></td>
+        <td class="day-box"><input type="checkbox" title="" /></td>
+        <td class="day-box">
+          <input type="checkbox" title="" checked="checked" /></td>
+        <td class="day-box">
+          <input type="checkbox" title="" checked="checked" /></td>
+        <td class="day-box">
+          <input type="checkbox" title="" checked="checked" /></td>
+        <td class="day-box">
+          <input type="checkbox" title="" checked="checked" /></td>
+        <td class="day-box">
+          <input type="checkbox" title="" checked="checked" /></td>
+        <td class="day-box"><input type="checkbox" title="" /></td>
+        <td class="day-box">
+          <input type="checkbox" title="" checked="checked" /></td>
+        <td class="day-box"><input type="checkbox" title="" /></td>
+        <td class="day-box"><input type="checkbox" title="" /></td>
+        <td class="day-box"><input type="checkbox" title="" /></td>
+        <td class="day-box"><input type="checkbox" title="" /></td>
+        <td class="day-box"><input type="checkbox" title="" /></td>
+        <td class="day-box"><input type="checkbox" title="" /></td>
+        <td class="day-box"><input type="checkbox" title="" /></td>
+        <td class="day-box"><input type="checkbox" title="" /></td>
+        <td class="day-box"><input type="checkbox" title="" /></td>
+        <td class="day-box"><input type="checkbox" title="" /></td>
+        <td class="day-box"><input type="checkbox" title="" /></td>
+        <td class="day-box"><input type="checkbox" title="" /></td>
+        <td class="day-box"><input type="checkbox" title="" /></td>
+        <td class="day-box"><input type="checkbox" title="" /></td>
+        <td class="day-box"><input type="checkbox" title="" /></td>
+        <td class="day-box"><input type="checkbox" title="" /></td>
+        <td class="day-box"><input type="checkbox" title="" /></td>
+        <td class="day-box"><input type="checkbox" title="" /></td>
+        <td class="day-box"><input type="checkbox" title="" /></td>
+        <td class="day-box"><input type="checkbox" title="" /></td>
+        <td class="day-box"><input type="checkbox" title="" /></td>
+        <td class="day-box"><input type="checkbox" title="" /></td>
+        <td class="day-box"><input type="checkbox" title="" /></td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  <!-- End Visits Table -->
+</div>
+
+{% include "students/pagination.html" %}
+<!-- End Journal Content -->
+{% endblock content %}
