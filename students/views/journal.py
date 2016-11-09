@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from django.shortcuts import render
-from ..models.journal import Journal
+from ..models.monthjournal import MonthJournal
 
 
 # Views for journal
