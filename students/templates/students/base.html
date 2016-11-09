@@ -57,18 +57,18 @@
         <div class="col-xs-12">
           <ul class="nav nav-tabs" role="tablist">
             {% url "home" as url_students %}
-            {% url "journal_edit" as url_journal %}
             {% url "groups" as url_groups %}
+            {% url "journal_edit" as url_journal %}
 
             <li role="presentation"
                 {% if url_students == request.path %}class="active"{% endif %}>
               <a href="{% url "home" %}">Студенти</a></li>
             <li role="presentation"
-                {% if url_journal in request.path %}class="active"{% endif %}>
-              <a href="{% url "journal_edit" %}">Відвідування</a></li>
-            <li role="presentation"
                 {% if url_groups in request.path %}class="active"{% endif %}>
               <a href="{% url "groups" %}">Групи</a></li>
+            <li role="presentation"
+                {% if url_journal in request.path %}class="active"{% endif %}>
+              <a href="{% url "journal_edit" %}">Відвідування</a></li>
           </ul>
         </div>
       </div>
