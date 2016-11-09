@@ -19,7 +19,7 @@ def groups_list(request):
     else:
         groups = groups.order_by('title')
 
-    # paginate students
+    # paginate groups
     paginator = Paginator(groups, 3)
     page = request.GET.get('page')
     try:

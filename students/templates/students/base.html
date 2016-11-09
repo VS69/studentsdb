@@ -59,6 +59,7 @@
             {% url "home" as url_students %}
             {% url "groups" as url_groups %}
             {% url "journal_edit" as url_journal %}
+            {% url "exams" as url_exams %}
 
             <li role="presentation"
                 {% if url_students == request.path %}class="active"{% endif %}>
@@ -69,6 +70,9 @@
             <li role="presentation"
                 {% if url_journal in request.path %}class="active"{% endif %}>
               <a href="{% url "journal_edit" %}">Відвідування</a></li>
+            <li role="presentation"
+                {% if url_exams in request.path %}class="active"{% endif %}>
+              <a href="{% url "exams" %}">Екзамени</a></li>
           </ul>
         </div>
       </div>
