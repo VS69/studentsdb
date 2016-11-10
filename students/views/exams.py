@@ -12,12 +12,12 @@ def exams_list(request):
 
     # try to order exams list
     order_by = request.GET.get('order_by', '')
-    if order_by in ('id', 'date', 'group'):
+    if order_by in ('teaching', 'date', 'teacher', 'group'):
         exams = exams.order_by(order_by)
         if request.GET.get('reverse', '') == '1':
             exams = exams.reverse()
     else:
-        exams = exams.order_by('id')
+        exams = exams.order_by('teaching')
 
     # apply pagination, 2 exams per page
     context = paginate(exams, 2, request, {}, var_name='exams')

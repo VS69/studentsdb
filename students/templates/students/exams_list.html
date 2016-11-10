@@ -15,17 +15,17 @@
     {% with order_by=request.GET.order_by reverse=request.GET.reverse %}
     <thead>
       <tr>
+        <th>#</th>
         <th>
-          <a href="{% url "exams" %}?order_by=id{% if not order_by or order_by == 'id' and reverse != '1' %}&amp;reverse=1{% endif %}">
-            #
-            {% if not order_by or order_by == 'id' and reverse != '1' %}
+          <a href="{% url "exams" %}?order_by=teaching{% if not order_by or order_by == 'teaching' and reverse != '1' %}&amp;reverse=1{% endif %}">
+            Предмет
+            {% if not order_by or order_by == 'teaching' and reverse != '1' %}
               &uarr;
-            {% elif order_by == 'id' and reverse == '1' %}
+            {% elif order_by == 'teaching' and reverse == '1' %}
               &darr;
             {% endif %}
           </a>
         </th>
-        <th>Предмет</th>
         <th>
           <a href="{% url "exams" %}?order_by=date{% if order_by == 'date' and reverse != '1' %}&amp;reverse=1{% endif %}">
             Дата та час проведення
@@ -36,7 +36,16 @@
             {% endif %}
           </a>
         </th>
-        <th>Викладач</th>
+        <th>
+          <a href="{% url "exams" %}?order_by=teacher{% if order_by == 'teacher' and reverse != '1' %}&amp;reverse=1{% endif %}">
+            Викладач
+            {% if order_by == 'teacher' and reverse != '1' %}
+              &uarr;
+            {% elif order_by == 'teacher' and reverse == '1' %}
+              &darr;
+            {% endif %}
+          </a>
+        </th>
         <th>
           <a href="{% url "exams" %}?order_by=group{% if order_by == 'group' and reverse != '1' %}&amp;reverse=1{% endif %}">
             Група
@@ -55,7 +64,13 @@
     <tbody>
       {% for exam in exams %}
       <tr>
-        <td>{{ exam.id }}</td>
+        <td>
+          {% if is_paginated %}
+            {{ page_obj.start_index|add:forloop.counter0 }}
+          {% else %}
+            {{ forloop.counter }}
+          {% endif %}
+        </td>
         <td><a title="Редагувати"
                href="{% url "exams_edit" exam.id %}">
               {{ exam.teaching }}</a></td>
