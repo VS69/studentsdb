@@ -1,69 +1,21 @@
-﻿{% if students.has_other_pages %}
+﻿{% if is_paginated %}
 {% with order_by=request.GET.order_by reverse=request.GET.reverse %}
 <nav>
   <ul class="pagination">
     <li>
-      <a href="{% url "home" %}?page=1{% if order_by %}&amp;order_by={{ order_by }}{% endif %}{% if reverse %}&amp;reverse={{ reverse }}{% endif %}">
+      <a href="?page=1{% if order_by %}&amp;order_by={{ order_by }}{% endif %}{% if reverse %}&amp;reverse={{ reverse }}{% endif %}">
         &laquo;
       </a>
     </li>
-    {% for p in students.paginator.page_range %}
-    <li {% if students.number == p %}class="active"{% endif %}>
-      <a href="{% url "home" %}?page={{ p }}{% if order_by %}&amp;order_by={{ order_by }}{% endif %}{% if reverse %}&amp;reverse={{ reverse }}{% endif %}">
+    {% for p in paginator.page_range %}
+    <li {% if object_list.number == p %}class="active"{% endif %}>
+      <a href="?page={{ p }}{% if order_by %}&amp;order_by={{ order_by }}{% endif %}{% if reverse %}&amp;reverse={{ reverse }}{% endif %}">
         {{ p }}
       </a>
     </li>
     {% endfor %}
     <li>
-      <a href="{% url "home" %}?page={{ students.paginator.num_pages }}{% if order_by %}&amp;order_by={{ order_by }}{% endif %}{% if reverse %}&amp;reverse={{ reverse }}{% endif %}">
-        &raquo;
-      </a>
-    </li>
-  </ul>
-</nav>
-{% endwith %}
-{% elif groups.has_other_pages %}
-{% with order_by=request.GET.order_by reverse=request.GET.reverse %}
-<nav>
-  <ul class="pagination">
-    <li>
-      <a href="{% url "groups" %}?page=1{% if order_by %}&amp;order_by={{ order_by }}{% endif %}{% if reverse %}&amp;reverse={{ reverse }}{% endif %}">
-        &laquo;
-      </a>
-    </li>
-    {% for p in groups.paginator.page_range %}
-    <li {% if groups.number == p %}class="active"{% endif %}>
-      <a href="{% url "groups" %}?page={{ p }}{% if order_by %}&amp;order_by={{ order_by }}{% endif %}{% if reverse %}&amp;reverse={{ reverse }}{% endif %}">
-        {{ p }}
-      </a>
-    </li>
-    {% endfor %}
-    <li>
-      <a href="{% url "groups" %}?page={{ groups.paginator.num_pages }}{% if order_by %}&amp;order_by={{ order_by }}{% endif %}{% if reverse %}&amp;reverse={{ reverse }}{% endif %}">
-        &raquo;
-      </a>
-    </li>
-  </ul>
-</nav>
-{% endwith %}
-{% elif exams.has_other_pages %}
-{% with order_by=request.GET.order_by reverse=request.GET.reverse %}
-<nav>
-  <ul class="pagination">
-    <li>
-      <a href="{% url "exams" %}?page=1{% if order_by %}&amp;order_by={{ order_by }}{% endif %}{% if reverse %}&amp;reverse={{ reverse }}{% endif %}">
-        &laquo;
-      </a>
-    </li>
-    {% for p in exams.paginator.page_range %}
-    <li {% if exams.number == p %}class="active"{% endif %}>
-      <a href="{% url "exams" %}?page={{ p }}{% if order_by %}&amp;order_by={{ order_by }}{% endif %}{% if reverse %}&amp;reverse={{ reverse }}{% endif %}">
-        {{ p }}
-      </a>
-    </li>
-    {% endfor %}
-    <li>
-      <a href="{% url "exams" %}?page={{ exams.paginator.num_pages }}{% if order_by %}&amp;order_by={{ order_by }}{% endif %}{% if reverse %}&amp;reverse={{ reverse }}{% endif %}">
+      <a href="?page={{ paginator.num_pages }}{% if order_by %}&amp;order_by={{ order_by }}{% endif %}{% if reverse %}&amp;reverse={{ reverse }}{% endif %}">
         &raquo;
       </a>
     </li>

@@ -2,8 +2,8 @@
 
 from django.shortcuts import render
 from django.http import HttpResponse
-from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from ..models.exam import Exam
+from ..util import paginate
 
 
 # Views for exams
@@ -19,20 +19,10 @@ def exams_list(request):
     else:
         exams = exams.order_by('id')
 
-    # paginate exams
-    paginator = Paginator(exams, 3)
-    page = request.GET.get('page')
-    try:
-        exams = paginator.page(page)
-    except PageNotAnInteger:
-        # if page is not an integer, deliver first page.
-        exams = paginator.page(1)
-    except EmptyPage:
-        # if page is out of range (e.g. 9999), deliver last page of results.
-        exams = paginator.page(paginator.num_pages)
+    # apply pagination, 2 exams per page
+    context = paginate(exams, 2, request, {}, var_name='exams')
 
-    return render(request, 'students/exams_list.html',
-                  {'exams': exams})
+    return render(request, 'students/exams_list.html', context)
 
 
 def exams_add(request):

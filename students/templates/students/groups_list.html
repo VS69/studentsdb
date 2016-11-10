@@ -86,6 +86,8 @@
   </table>
   <!-- End Groups Listing -->
 
-  {% include "students/pagination.html" %}
+  {% with object_list=groups %}
+    {% include "students/pagination.html" %}
+  {% endwith %}
 </div>
 {% endblock content %}
