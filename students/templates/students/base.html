@@ -9,7 +9,7 @@
       Сервіс обліку студентів - {% block meta_title %}{% endblock meta_title %}
     </title>
     <meta name="description"
-          value="Система обліку студентів навчального закладу" />
+          content="Система обліку студентів навчального закладу" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Include Styles -->
@@ -84,9 +84,15 @@
         <div class="col-xs-12" id="content-column">
 
           <!-- Status Message -->
-          {% comment "Not used alert so far" %}
-          <div class="alert alert-warning" role="alert">Статус оновлено!</div>
-          {% endcomment %}
+          {% block status_message %}
+            {% if messages %}
+            <div class="alert alert-warning" role="alert">
+              {% for message in messages %}
+                {{ message }}
+              {% endfor %}
+            </div>
+            {% endif %}
+          {% endblock status_message %}
 
           <h2>{% block title %}{% endblock title %}</h2>
 

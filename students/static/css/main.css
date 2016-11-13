@@ -27,19 +27,13 @@ h1, h2, h3, h4, h5, h6 {
   background-color: #ffffff;
   border: 1px solid #cccccc;
   height: 30px;
-  line-height: 30 px;
+  line-height: 30px;
   color: #555555;
 }
 
-/* Groups Selector #2 */
-#group-selector2 select {
-  margin: 0;
-  width: 100%;
-  background-color: #ffffff;
-  border: 1px solid #cccccc;
-  height: 30px;
-  line-height: 30 px;
-  color: #555555;
+/* Form Styles */
+textarea, select, input {
+  max-width: 300px;
 }
 
 td.day-box {
