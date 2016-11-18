@@ -60,6 +60,7 @@
             {% url "groups" as url_groups %}
             {% url "journal_edit" as url_journal %}
             {% url "exams" as url_exams %}
+            {% url "contact_admin" as contact_admin %}
 
             <li role="presentation"
                 {% if url_students == request.path %}class="active"{% endif %}>
@@ -73,6 +74,9 @@
             <li role="presentation"
                 {% if url_exams in request.path %}class="active"{% endif %}>
               <a href="{% url "exams" %}">Екзамени</a></li>
+            <li role="presentation"
+                {% if contact_admin in request.path %}class="active"{% endif %}>
+              <a href="{% url "contact_admin" %}">Контакт</a></li>
           </ul>
         </div>
       </div>
