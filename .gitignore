@@ -4,6 +4,5 @@
 *.mo
 *.egg
 *.idea
+.env
 /.project
-db.py
-email.py

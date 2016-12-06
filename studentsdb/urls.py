@@ -2,6 +2,8 @@ from django.conf.urls import patterns, include, url
 from django.contrib import admin
 from .settings import MEDIA_ROOT, DEBUG
 
+# from contact_form.views import ContactFormView
+# from students.views.contact_admin import ContactForm
 
 urlpatterns = patterns(
     '',
@@ -39,6 +41,9 @@ urlpatterns = patterns(
     # Contact Admin url
     url(r'^contact-admin/$', 'students.views.contact_admin.contact_admin',
         name='contact_admin'),
+    # url(r'^contact-admin/$', ContactFormView.as_view(form_class=ContactForm),
+    #     name='contact_admin'),
+    # url(r'^contact/', include('contact_form.urls'), name='contact_admin'),
 
     url(r'^admin/', include(admin.site.urls)),
 )

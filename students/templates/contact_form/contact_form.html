@@ -6,22 +6,19 @@
 {% block meta_title %}Зв'язок з Адміністратором{% endblock meta_title %}
 
 {% block status_message %}
-{% if form.errors %}
-  <div class="alert alert-warning" role="alert">
-    Будь-ласка, виправте наступні помилки
-  </div>
-{% endif %}
-
 {{ block.super }}
-
 {% endblock status_message %}
 
 {% block title %}Зв'язок з Адміністратором{% endblock title %}
 
 {% block content %}
 
-{% crispy form %}
-
-<p></p>
+<form method="post">
+  {% csrf_token %}
+  <p>Name: <input type="text" name="name"></p>
+  <p>Your e-mail: <input type="text" name="email"></p>
+  <p>Message: <textarea name="body" rows="10" cols="50"></textarea></p>
+  <input type="submit" value="Submit">
+</form>
 
 {% endblock content %}

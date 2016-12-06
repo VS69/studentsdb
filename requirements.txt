@@ -2,3 +2,5 @@ Django==1.7.11
 Pillow
 MySQL-python
 django-crispy-forms==1.4.0
+django-contact-form==1.3
+python-decouple
