@@ -19,7 +19,7 @@ class ContactForm(forms.Form):
         # call original initializator
         super(ContactForm, self).__init__(*args, **kwargs)
 
-        # this helper object allows us to custimize form
+        # this helper object allows us to customize form
         self.helper = FormHelper()
 
         # form tag attributes

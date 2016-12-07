@@ -1,9 +1,9 @@
 from django.conf.urls import patterns, include, url
+from django.views.generic import TemplateView
 from django.contrib import admin
 from .settings import MEDIA_ROOT, DEBUG
 
-# from contact_form.views import ContactFormView
-# from students.views.contact_admin import ContactForm
+from students.views.custom_contact_form import CustomContactFormView
 
 urlpatterns = patterns(
     '',
@@ -41,9 +41,11 @@ urlpatterns = patterns(
     # Contact Admin url
     url(r'^contact-admin/$', 'students.views.contact_admin.contact_admin',
         name='contact_admin'),
-    # url(r'^contact-admin/$', ContactFormView.as_view(form_class=ContactForm),
-    #     name='contact_admin'),
-    # url(r'^contact/', include('contact_form.urls'), name='contact_admin'),
+    # url(r'^contact-form/$', CustomContactFormView.as_view(),
+    #     name='contact_form'),
+    # url(r'^contact-form/sent/$', TemplateView.as_view(
+    #     template_name='contact_form/contact_form_sent.html'),
+    #     name='contact_form_sent'),
 
     url(r'^admin/', include(admin.site.urls)),
 )
